@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :teachers
+  # Routes for the Teacher resource:
+  # READ
+  get "/teachers", :controller => "teachers", :action => "index"
+  get "/teachers/:id", :controller => "teachers", :action => "show"
+
+
   # Routes for the Action_step resource:
   # CREATE
   get "/action_steps/new", :controller => "action_steps", :action => "new"
