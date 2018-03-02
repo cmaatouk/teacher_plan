@@ -24,7 +24,7 @@
           Teacher
         </label>
 
-        <input type="text" id="teacher_id" name="teacher_id" placeholder="Teacher" class="form-control" value="<%= @improvement_plan.teacher_id %>">
+        <%= select_tag(:teacher_id, options_from_collection_for_select(Teacher.all, :id, :email, @improvement_plan.teacher_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for leader -->
