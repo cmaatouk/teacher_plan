@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Coaching_position resource:
+  # CREATE
+  get "/coaching_positions/new", :controller => "coaching_positions", :action => "new"
+  post "/create_coaching_position", :controller => "coaching_positions", :action => "create"
+
+  # READ
+  get "/coaching_positions", :controller => "coaching_positions", :action => "index"
+  get "/coaching_positions/:id", :controller => "coaching_positions", :action => "show"
+
+  # UPDATE
+  get "/coaching_positions/:id/edit", :controller => "coaching_positions", :action => "edit"
+  post "/update_coaching_position/:id", :controller => "coaching_positions", :action => "update"
+
+  # DELETE
+  get "/delete_coaching_position/:id", :controller => "coaching_positions", :action => "destroy"
+  #------------------------------
+
   # Routes for the Comment resource:
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
