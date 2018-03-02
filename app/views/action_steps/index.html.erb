@@ -27,7 +27,13 @@
         <td><%= action_step.necessary_resources %></td>
         <td><%= action_step.implementation_specifics %></td>
         <td><%= action_step.measure_of_success %></td>
-        <td><%= action_step.goal.improvement_plan_id %></td>
+        <td>
+          <% if action_step.goal.present? %>
+            <a href="/goals/<%= action_step.goal.id %>">
+              <%= action_step.goal.improvement_plan_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>
           <a href="/action_steps/<%= action_step.id %>/edit" class="btn btn-warning">Edit</a>

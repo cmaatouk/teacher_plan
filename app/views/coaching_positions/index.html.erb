@@ -16,8 +16,20 @@
 
       <% @coaching_positions.each do |coaching_position| %>
       <tr>
-        <td><%= coaching_position.user.email %></td>
-        <td><%= coaching_position.improvement_plan.teacher_id %></td>
+        <td>
+          <% if coaching_position.user.present? %>
+            <a href="/teachers/<%= coaching_position.user.id %>">
+              <%= coaching_position.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if coaching_position.improvement_plan.present? %>
+            <a href="/improvement_plans/<%= coaching_position.improvement_plan.id %>">
+              <%= coaching_position.improvement_plan.teacher_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/coaching_positions/<%= coaching_position.id %>" class="btn btn-primary">Show</a>
           <a href="/coaching_positions/<%= coaching_position.id %>/edit" class="btn btn-warning">Edit</a>

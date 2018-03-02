@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Teacher</dt>
-      <dd><%= @improvement_plan.teacher_id %></dd>
+      <dd>
+        <% if @improvement_plan.teacher.present? %>
+          <a href="/teachers/<%= @improvement_plan.teacher_id %>">
+            <%= @improvement_plan.teacher.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Leader</dt>
       <dd><%= @improvement_plan.leader %></dd>

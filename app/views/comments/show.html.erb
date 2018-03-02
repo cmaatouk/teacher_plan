@@ -6,13 +6,25 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Action step</dt>
-      <dd><%= @comment.action_step_id %></dd>
+      <dd>
+        <% if @comment.action_step.present? %>
+          <a href="/action_steps/<%= @comment.action_step_id %>">
+            <%= @comment.action_step.descriptions %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Body</dt>
       <dd><%= @comment.body %></dd>
 
       <dt>User</dt>
-      <dd><%= @comment.user_id %></dd>
+      <dd>
+        <% if @comment.user.present? %>
+          <a href="/teachers/<%= @comment.user_id %>">
+            <%= @comment.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
