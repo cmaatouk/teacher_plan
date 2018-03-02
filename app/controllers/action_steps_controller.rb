@@ -6,6 +6,7 @@ class ActionStepsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @action_step = ActionStep.find(params[:id])
 
     render("action_steps/show.html.erb")

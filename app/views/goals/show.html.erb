@@ -54,6 +54,74 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_action_step" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for descriptions -->
+      <div class="form-group">
+        <label for="descriptions" class="control-label">
+          Descriptions
+        </label>
+
+        <textarea id="descriptions" name="descriptions" placeholder="Descriptions" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for target_dates -->
+      <div class="form-group">
+        <label for="target_dates" class="control-label">
+          Target dates
+        </label>
+
+        <input type="text" id="target_dates" name="target_dates" placeholder="Target dates" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for leader -->
+      <div class="form-group">
+        <label for="leader" class="control-label">
+          Leader
+        </label>
+
+        <input type="text" id="leader" name="leader" placeholder="Leader" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for necessary_resources -->
+      <div class="form-group">
+        <label for="necessary_resources" class="control-label">
+          Necessary resources
+        </label>
+
+        <input type="text" id="necessary_resources" name="necessary_resources" placeholder="Necessary resources" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for implementation_specifics -->
+      <div class="form-group">
+        <label for="implementation_specifics" class="control-label">
+          Implementation specifics
+        </label>
+
+        <textarea id="implementation_specifics" name="implementation_specifics" placeholder="Implementation specifics" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for measure_of_success -->
+      <div class="form-group">
+        <label for="measure_of_success" class="control-label">
+          Measure of success
+        </label>
+
+        <input type="text" id="measure_of_success" name="measure_of_success" placeholder="Measure of success" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for goal_id -->
+      <input type="hidden" name="goal_id" value="<%= @goal.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Action Step
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
