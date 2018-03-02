@@ -20,6 +20,10 @@ class Teacher < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :improvement_plans,
+             :through => :coaches,
+             :source => :improvement_plan
+
   # Validations
 
   # Include default devise modules. Others available are:
