@@ -1,6 +1,8 @@
 class ImprovementPlan < ApplicationRecord
   # Direct associations
 
+  belongs_to :teacher
+
   has_many   :plan_comments,
              :dependent => :destroy
 

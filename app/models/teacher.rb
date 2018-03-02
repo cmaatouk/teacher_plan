@@ -1,6 +1,10 @@
 class Teacher < ApplicationRecord
   # Direct associations
 
+  has_many   :improvements,
+             :class_name => "ImprovementPlan",
+             :dependent => :destroy
+
   has_many   :coaches,
              :class_name => "CoachingPosition",
              :foreign_key => "user_id",
