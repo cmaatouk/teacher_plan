@@ -20,3 +20,189 @@
     </div>
   </div>
 </div>
+
+<!-- A Teacher has many coaches -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Coaches
+      </li>
+
+      <% @teacher.coaches.each do |coaching_position| %>
+        <li class="list-group-item">
+          <a href="/coaching_positions/<%= coaching_position.id %>">
+            <%= coaching_position.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/coaching_positions/<%= coaching_position.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/coaching_positions/<%= coaching_position.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_coaching_position/<%= coaching_position.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Teacher has many improvements -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Improvements
+      </li>
+
+      <% @teacher.improvements.each do |improvement_plan| %>
+        <li class="list-group-item">
+          <a href="/improvement_plans/<%= improvement_plan.id %>">
+            <%= improvement_plan.teacher_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_improvement_plan/<%= improvement_plan.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Teacher has many plan_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Plan Comments
+      </li>
+
+      <% @teacher.plan_comments.each do |plan_comment| %>
+        <li class="list-group-item">
+          <a href="/plan_comments/<%= plan_comment.id %>">
+            <%= plan_comment.body %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/plan_comments/<%= plan_comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/plan_comments/<%= plan_comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_plan_comment/<%= plan_comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Teacher has many comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Comments
+      </li>
+
+      <% @teacher.comments.each do |comment| %>
+        <li class="list-group-item">
+          <a href="/comments/<%= comment.id %>">
+            <%= comment.action_step_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/comments/<%= comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/comments/<%= comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_comment/<%= comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Teacher has many improvement_plans -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Improvement Plans
+      </li>
+
+      <% @teacher.improvement_plans.each do |improvement_plan| %>
+        <li class="list-group-item">
+          <a href="/improvement_plans/<%= improvement_plan.id %>">
+            <%= improvement_plan.teacher_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_improvement_plan/<%= improvement_plan.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Teacher has many action_steps -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Action Steps
+      </li>
+
+      <% @teacher.action_steps.each do |action_step| %>
+        <li class="list-group-item">
+          <a href="/action_steps/<%= action_step.id %>">
+            <%= action_step.descriptions %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/action_steps/<%= action_step.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_action_step/<%= action_step.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
