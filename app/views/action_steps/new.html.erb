@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @action_step.errors.any? %>
+  <% @action_step.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Action Step</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_action_step" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for descriptions -->
+      <div class="form-group">
+        <label for="descriptions" class="control-label">
+          Descriptions
+        </label>
+
+        <textarea id="descriptions" name="descriptions" placeholder="Descriptions" class="form-control" rows="3"><%= @action_step.descriptions %></textarea>
+      </div>
+
+      <!-- Label and input for target_dates -->
+      <div class="form-group">
+        <label for="target_dates" class="control-label">
+          Target dates
+        </label>
+
+        <input type="text" id="target_dates" name="target_dates" placeholder="Target dates" class="form-control" value="<%= @action_step.target_dates %>">
+      </div>
+
+      <!-- Label and input for leader -->
+      <div class="form-group">
+        <label for="leader" class="control-label">
+          Leader
+        </label>
+
+        <input type="text" id="leader" name="leader" placeholder="Leader" class="form-control" value="<%= @action_step.leader %>">
+      </div>
+
+      <!-- Label and input for necessary_resources -->
+      <div class="form-group">
+        <label for="necessary_resources" class="control-label">
+          Necessary resources
+        </label>
+
+        <input type="text" id="necessary_resources" name="necessary_resources" placeholder="Necessary resources" class="form-control" value="<%= @action_step.necessary_resources %>">
+      </div>
+
+      <!-- Label and input for implementation_specifics -->
+      <div class="form-group">
+        <label for="implementation_specifics" class="control-label">
+          Implementation specifics
+        </label>
+
+        <textarea id="implementation_specifics" name="implementation_specifics" placeholder="Implementation specifics" class="form-control" rows="3"><%= @action_step.implementation_specifics %></textarea>
+      </div>
+
+      <!-- Label and input for measure_of_success -->
+      <div class="form-group">
+        <label for="measure_of_success" class="control-label">
+          Measure of success
+        </label>
+
+        <input type="text" id="measure_of_success" name="measure_of_success" placeholder="Measure of success" class="form-control" value="<%= @action_step.measure_of_success %>">
+      </div>
+
+      <!-- Label and input for goal_id -->
+      <div class="form-group">
+        <label for="goal_id" class="control-label">
+          Goal
+        </label>
+
+        <input type="text" id="goal_id" name="goal_id" placeholder="Goal" class="form-control" value="<%= @action_step.goal_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Action Step
+      </button>
+      or
+      <a href="/action_steps">Cancel</a>
+    </form>
+  </div>
+</div>
