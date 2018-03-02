@@ -24,7 +24,7 @@
           Action step
         </label>
 
-        <input type="text" id="action_step_id" name="action_step_id" placeholder="Action step" class="form-control" value="<%= @comment.action_step_id %>">
+        <%= select_tag(:action_step_id, options_from_collection_for_select(ActionStep.all, :id, :descriptions, @comment.action_step_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for body -->
