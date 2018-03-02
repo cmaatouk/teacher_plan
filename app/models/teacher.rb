@@ -1,6 +1,10 @@
 class Teacher < ApplicationRecord
   # Direct associations
 
+  has_many   :plan_comments,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   has_many   :improvements,
              :class_name => "ImprovementPlan",
              :dependent => :destroy
