@@ -20,6 +20,10 @@ class Teacher < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :action_steps,
+             :through => :comments,
+             :source => :action_step
+
   has_many   :improvement_plans,
              :through => :coaches,
              :source => :improvement_plan
